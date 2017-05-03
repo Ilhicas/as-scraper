@@ -7,6 +7,9 @@ class Worker:
     def __init__(self, url):
         self.url = url
         self.urls = dict()
+        self.headers = {
+            "User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36"
+        }
         self.set_up()
 
     def set_up(self):
@@ -14,7 +17,8 @@ class Worker:
         Set all region urls to grab urls for beverages
         '''        
         soup = self.get_dom(self.url)
-        regions = soup.select("#navigation > ul:nth-of-type(2) li a")
+        regions = soup.select("#navigation > ul:nth-of-type(1) li a")
+        print (regions)
         for region in regions:
             self.urls[region.text] = region['href']
     
@@ -27,10 +31,11 @@ class Worker:
             If successful Object BeautifulSoup else None
         '''
         #Do not abuse on requests
-        time.sleep(1)
-        response = requests.get(self.url)
+        #time.sleep(1)
+        response = requests.get(url, headers=self.headers)
+        
         if response.status_code == 200:
-            soup = bs(response.text, 'html')
+            soup = bs(response.text, "html.parser")
             return soup
         else:
             return None
@@ -42,14 +47,17 @@ class Worker:
         Returns:
             Dict ({'item_name':{'url':url, 'type':item_type}})
         '''
+        
         url = self.urls[region]
+        
         soup = self.get_dom(url)
         region_urls = dict()
         if not soup:
             return None
         
         css_selector = '#winesortlist > div.tblbdr > table > tbody > tr:nth-of-type(1)'
-        headers = soup.select(css_selector)[0].split()
+        print(soup)
+        headers = soup.select(css_selector)[0].text.split()
         css_selector = "#winesortlist > div.tblbdr > table > tbody > tr > td > a"
         cells = soup.select(css_selector)
         for i in range(limit):
@@ -59,8 +67,8 @@ class Worker:
 
 class Item(object):
     def factory(type, material):
-        if type == 'white': return WhiteWhine(material)
-        if type == 'red': return RedWhine(material)
+        if type == 'white': return WhiteWine(material)
+        if type == 'red': return RedWine(material)
         if type == 'beverage': return Beverage(material)
         assert 0, 'Not Implemented' + type
     factory = staticmethod(factory)
