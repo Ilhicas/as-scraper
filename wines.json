@@ -1,0 +1,49 @@
+{
+    "type": "Red Wine", 
+    "alcohol": "20%", 
+    "name": "Warre's Vintage Port, Portugal"
+}{
+    "type": "Red Wine", 
+    "alcohol": "20 - 21%", 
+    "name": "W & J Graham's Vintage Port, Portugal"
+}{
+    "type": "Red Wine", 
+    "alcohol": "20 - 20.5%", 
+    "name": "Taylor Fladgate Vintage Port, Portugal"
+}{
+    "type": "Red Wine", 
+    "alcohol": "19 - 20%", 
+    "name": "Quinta do Noval Vintage Port, Portugal"
+}{
+    "type": "Red Wine", 
+    "alcohol": "20%", 
+    "name": "Dow's Vintage Port, Portugal"
+}{
+    "type": "Red Wine", 
+    "alcohol": "20 - 20.5%", 
+    "name": "Fonseca Vintage Port, Portugal"
+}{
+    "type": "Red Wine", 
+    "alcohol": "12.5 - 13.5%", 
+    "name": "Chateau Margaux, Margaux, France"
+}{
+    "type": "Red Wine", 
+    "alcohol": "12.5 - 14.4%", 
+    "name": "Chateau Latour, Pauillac, France"
+}{
+    "type": "Red Wine", 
+    "alcohol": "12.5 - 13%", 
+    "name": "Chateau Lafite Rothschild, Pauillac, France"
+}{
+    "price": "\u0080165", 
+    "type": "White Wine", 
+    "name": "Dom Perignon Brut, Champagne, France"
+}{
+    "type": "Red Wine", 
+    "alcohol": "13 - 14.6%", 
+    "name": "Petrus, Pomerol, France"
+}{
+    "type": "Red Wine", 
+    "alcohol": "12.5 - 13.5%", 
+    "name": "Chateau Mouton Rothschild, Pauillac, France"
+}

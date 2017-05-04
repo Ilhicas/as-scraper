@@ -8,9 +8,13 @@ pip install virtualenv
 
 virtualenv -p python3 env
 
-#### Activate virtual env
+#### Activate virtual env in linux systems
 
 source env/bin/activate
+
+
+#### Activate virtual env in windows
+evn\Scripts\activate
 
 pip install -r requirements.txt
 
