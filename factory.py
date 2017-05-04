@@ -47,7 +47,7 @@ class Worker:
         Returns:
             Dict ({'item_name':{'url':url, 'type':item_type}})
         '''
-        '''print(self.urls)'''
+        #print(self.urls)
         url = self.urls[region]
         soup = self.get_dom(url)
         region_urls = dict()
@@ -122,7 +122,7 @@ def item_input_generator(region):
     '''Generating doms as it gets them'''
     rdr = Worker('http://www.wine-searcher.com/regions.lml')
     urls = rdr.get_region_urls(region, limit=30)
-    '''print(urls)'''
+    #print(urls)
     for item in urls.keys():
         yield rdr.get_dom(urls[item]['url']), item, urls[item]['type']
 
