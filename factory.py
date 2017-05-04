@@ -1,3 +1,14 @@
+'''
+    This code has been created as part of assignment 03 for AS (Software Architecture) Lecture
+    Department of Informatics Engineering, University of Coimbra
+    2016-2017
+
+    Authors:
+    André Santos , ailhicas@student.dei.uc.pt
+    Afonso Morais , fvmorais@student.dei.uc.pt
+    Miguel Freitas , mfreitas@student.dei.uc.pt
+'''
+
 from __future__ import generators
 from bs4 import BeautifulSoup as bs
 import requests
